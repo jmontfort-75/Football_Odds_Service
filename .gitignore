@@ -1,20 +1,35 @@
-# Python
-backend/.venv/
-backend/**/__pycache__/
-backend/**/*.pyc
-backend/.pytest_cache/
-backend/*.egg-info/
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
 
-# Env files
+# Next.js
+.next/
+out/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+
+# Environment — never commit real secrets
 .env
 .env.local
-*.env
-!*.env.example
+.env.*.local
 
-# Node / Next.js (frontend has its own .gitignore too; this is a safety net)
-frontend/node_modules/
-frontend/.next/
-frontend/out/
+# Debug
+*.log
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
 
 # OS
 .DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
