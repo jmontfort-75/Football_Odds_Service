@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
     # General
-    environment: str = "development"  # development | production
+    app_env: str = "development"  # development | production
     service_name: str = "football-odds-service"
 
     # Server

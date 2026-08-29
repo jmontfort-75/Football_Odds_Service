@@ -26,7 +26,7 @@ logger = logging.getLogger("football_odds_service")
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     logger.info(
-        "Starting %s in %s mode", settings.service_name, settings.environment
+        "Starting %s in %s mode", settings.service_name, settings.app_env
     )
     yield
 

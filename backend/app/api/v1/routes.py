@@ -20,6 +20,6 @@ def get_status() -> StatusResponse:
     return StatusResponse(
         status="ok",
         service=settings.service_name,
-        environment=settings.environment,
+        environment=settings.app_env,
         version="v1",
     )
