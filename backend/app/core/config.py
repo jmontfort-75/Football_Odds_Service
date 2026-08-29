@@ -19,9 +19,13 @@ class Settings(BaseSettings):
     # Server
     host: str = "0.0.0.0"
     port: int = 8000
+    log_level: str = "INFO"
 
     # CORS: origins allowed to call this API (comma-separated in .env)
     frontend_origin: str = "http://localhost:3000"
+
+    # Public URL this API is reachable at (used for OpenAPI server metadata)
+    public_api_url: str = "http://localhost:8000"
 
 
 # Single shared settings instance, imported wherever config is needed.

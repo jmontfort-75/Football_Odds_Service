@@ -17,7 +17,7 @@ from app.core.config import settings
 from app.models.status import HealthResponse
 
 logging.basicConfig(
-    level=logging.INFO,
+    level=settings.log_level,
     format="%(asctime)s %(levelname)s %(name)s: %(message)s",
 )
 logger = logging.getLogger("football_odds_service")
@@ -31,7 +31,12 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     yield
 
 
-app = FastAPI(title="Football Odds Service", version="0.1.0", lifespan=lifespan)
+app = FastAPI(
+    title="Football Odds Service",
+    version="0.1.0",
+    lifespan=lifespan,
+    servers=[{"url": settings.public_api_url}],
+)
 
 # Allow the local Next.js dev server (or configured frontend origin) to
 # call this API from the browser. Kept narrow rather than wildcard "*".
