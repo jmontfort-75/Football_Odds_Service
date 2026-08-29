@@ -1,0 +1,9 @@
+{
+  "projectName": "football-odds-service",
+  "description": "",
+  "hasBackend": true,
+  "domain": {
+    "mode": "subdomain",
+    "baseDomain": "projectsin.ai"
+  }
+}
