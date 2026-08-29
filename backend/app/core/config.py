@@ -27,6 +27,10 @@ class Settings(BaseSettings):
     # Public URL this API is reachable at (used for OpenAPI server metadata)
     public_api_url: str = "http://localhost:8000"
 
+    # Oddschecker provider: must stay headless in production (no GUI, no
+    # X11/xvfb). Set to false only for local interactive debugging.
+    oddschecker_headless: bool = True
+
 
 # Single shared settings instance, imported wherever config is needed.
 settings = Settings()
